@@ -1,0 +1,19 @@
+body {
+    width: 400px;
+    height: 500px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+input {
+    margin: auto;
+}
+
+.note {
+    width: auto;
+    height: 50px;
+    margin: 10px;
+    padding: 5px;
+    background-color: blue;
+    color: dark;
+}
