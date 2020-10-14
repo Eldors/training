@@ -16,18 +16,28 @@ function pushTheNote() {
 }
 
 function pusheTheTextarea () {
-  const text = document.createElement('p');
-  const k = document.getElementById(`0${i}`);
-  text.textContent = time.value;
-  console.log('k: ', k);
-  i++;
-  k.appendChild(text);
-  time.value = '';
+    const k = document.getElementById(`0${i}`);
+    console.log('k: ', k);
+    i++;
 }
 
 function toggleDone (event) {  //проверка в какой элемент попапл курсор
     if (!event.target.matches('div.note')) return 
-  numberNote = event.target;
+
+    const idElement = event.target.id;
+   
+    const editorText = document.createElement('div');
+    const spanChild = document.getElementById(idElement).firstChild;
+    editorText.setAttribute('contenteditable', 'true')
+    spanChild.value = editorText.value;
+    console.log('spanChild: ', spanChild);
+
+    console.log('idElement: ', idElement);
+   
+
+
+    event.target.appendChild(editorText);
+    
 
 } 
 
