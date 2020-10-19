@@ -17,28 +17,19 @@ function pushTheNote() {
 
 function pusheTheTextarea () {
     const k = document.getElementById(`0${i}`);
-    console.log('k: ', k);
+   
+    const editorText = document.createElement('input');
+    
+    editorText.setAttribute('type', 'text');
+    editorText.setAttribute('autofocus', '');
+    editorText.setAttribute('maxlength', '54');
+    k.appendChild(editorText); // переделать под textarea
+
     i++;
 }
 
 function toggleDone (event) {  //проверка в какой элемент попапл курсор
-    if (!event.target.matches('div.note')) return 
-
-    const idElement = event.target.id;
-   
-    const editorText = document.createElement('div');
-    const spanChild = document.getElementById(idElement).firstChild;
-    editorText.setAttribute('contenteditable', 'true')
-    spanChild.value = editorText.value;
-    console.log('spanChild: ', spanChild);
-
-    console.log('idElement: ', idElement);
-   
-
-
-    event.target.appendChild(editorText);
-    
-
+    if (!event.target.matches('div.note')) return   
 } 
 
 mainNotes.addEventListener('click', toggleDone);
