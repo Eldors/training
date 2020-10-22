@@ -1,8 +1,9 @@
 body {
-    width: 1000px;
+    overflow: scroll;
+    width: auto;
     height: 500px;
-    margin: auto;
-    padding: 20px 0;
+    margin: 0;
+    padding: 0;
 }
 
 button {
@@ -12,31 +13,80 @@ button {
 .row {
     display: flex;
     width: auto;
-    height: 15%;
-    padding: 2px;
+    height: 100%; 
+    padding: 0;
     margin: 5px;
 }
 
-.column {
-    flex: auto;
-    width: auto;
-    height: auto;
-    background-color: black;
-    margin: 2px;
+.create-column {
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid grey;
+   
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    bottom: 20%;
+    top: 10%;
 }
 
-.add-column {
-    width: 50px;
+.column {
+    width: 200px;
+    height: min-content;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: white;
+    border: solid 2px black;
+    margin: 5px 10px;
+    padding: 5px;
+}
+
+.title {
+    width: 90%;
+    height: 40px;
+    margin: 5px auto;
+    background-color: tomato;  
+}
+
+.text   { 
+    resize: none;
+    width: 90%;
     height: 30px;
-    background-color: blue;
-    margin: 2px;
+    margin: 5px 5%;
+    border: none;
+    padding: 0;
+}
+
+span {
+    width: 90%;
+    height: 30px;
+    margin: 5px 5%;
+    border: none;
+    padding: 0;
+    color: white;
+}
+
+.add-the-note {
+    width: 90%;
+    height: 40px;
+    margin: 5px auto;
+    background-color: teal;
+}
+
+
+.add-column {
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    margin: 5px 10px;
+    border: solid 2px black;
     position: relative;
 }
 
 .new-column {
     width: 100%;
     height: 100%;  
-    position: absolute;
 }
 
 .note {
@@ -57,4 +107,38 @@ button {
     margin: 0;
     background-color: white;
     border: none;
+}
+
+p {
+    pointer-events: none;
+    text-align: center;
+}
+
+::-webkit-scrollbar{
+    width:12px;
+}
+
+::-webkit-scrollbar-thumb{
+    border-width:1px 1px 1px 2px;
+    border-color: #777;
+    background-color: #aaa;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    border-width: 1px 1px 1px 2px;
+    border-color: #555;
+    background-color: #777;
+}
+
+::-webkit-scrollbar-track{
+    border-width:0;
+}
+
+::-webkit-scrollbar-track:hover{
+    border-left: solid 1px #aaa;
+    background-color: #eee;
+}
+
+.none {
+    display: none;
 }
